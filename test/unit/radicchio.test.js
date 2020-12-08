@@ -18,6 +18,7 @@ describe('Radicchio_Tests', () => {
     it('Should store the timer key in Redis', (done) => {
       radicchio.startTimer('10000', {})
       .then((result) => {
+        // console.log("=--=> ", result)
         expect(result).to.be.a('string');
         done();
       });
