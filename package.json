@@ -1,35 +1,46 @@
 {
-  "name": "radicchio",
-  "version": "1.1.2",
-  "description": "A distributed timer implemented with Redis and Lua",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "pretest": "grunt lint",
-    "test": "grunt unit-test",
-    "unit-test": "grunt unit-test",
-    "lint": "grunt lint",
-    "watch": "grunt watch"
-  },
-  "repository": {
+  "_from": "git+https://github.com/tibrahul/Radicchio.git",
+  "_id": "radicchio@1.1.2",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/radicchio",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "git+https://github.com/erickipnis/Radicchio.git"
+    "raw": "radicchio@https://github.com/tibrahul/Radicchio.git",
+    "name": "radicchio",
+    "escapedName": "radicchio",
+    "rawSpec": "https://github.com/tibrahul/Radicchio.git",
+    "saveSpec": "git+https://github.com/tibrahul/Radicchio.git",
+    "fetchSpec": "https://github.com/tibrahul/Radicchio.git",
+    "gitCommittish": null
   },
-  "author": "Eric Kipnis",
-  "license": "GPL-2.0",
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/tibrahul/Radicchio.git#76592499de20e818ab117654e6c62ff683fa4cd2",
+  "_spec": "radicchio@https://github.com/tibrahul/Radicchio.git",
+  "_where": "/Users/rahul/Desktop/Amit/ztimer",
+  "author": {
+    "name": "Eric Kipnis"
+  },
   "bugs": {
     "url": "https://github.com/erickipnis/Radicchio/issues"
   },
-  "homepage": "https://github.com/erickipnis/Radicchio#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "bluebird": "^3.7.2",
     "event-emitter": "^0.3.5",
+    "eventemitter3": "^4.0.7",
     "events": "^3.2.0",
     "ioredis": "^4.19.2",
     "lodash": "^4.17.20",
     "node-uuid": "^1.4.7",
     "source-map-support": "^0.5.19"
   },
+  "deprecated": false,
+  "description": "A distributed timer implemented with Redis and Lua",
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-eslint": "^4.1.6",
@@ -46,5 +57,22 @@
     "grunt-mocha-test": "^0.12.7",
     "load-grunt-tasks": "^3.4.0",
     "mocha": "^2.3.4"
-  }
+  },
+  "homepage": "https://github.com/erickipnis/Radicchio#readme",
+  "license": "GPL-2.0",
+  "main": "index.js",
+  "name": "radicchio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickipnis/Radicchio.git"
+  },
+  "scripts": {
+    "lint": "grunt lint",
+    "pretest": "grunt lint",
+    "start": "node index.js",
+    "test": "grunt unit-test",
+    "unit-test": "grunt unit-test",
+    "watch": "grunt watch"
+  },
+  "version": "1.1.2"
 }

@@ -17,9 +17,9 @@ var _shortid = require('shortid');
 
 var _shortid2 = _interopRequireDefault(_shortid);
 
-var _eventEmitter = require('event-emitter');
+var _events = require('eventemitter3');
 
-var _eventEmitter2 = _interopRequireDefault(_eventEmitter);
+var _events2 = _interopRequireDefault(_events);
 
 var _lodash = require('lodash');
 
@@ -36,7 +36,7 @@ module.exports = function (redisUrl) {
   var redisURL = redisUrl || 'redis://localhost:6379';
   var redis = new _ioredis2.default(redisURL);
   var sub = new _ioredis2.default(redisURL);
-  var emitter = (0, _eventEmitter2.default)({});
+  var emitter = new _events2.default();
   var radicchio = {};
   var setTTLSuffix = '-ttl-set';
   var setDataSuffix = '-data-set';
@@ -159,10 +159,9 @@ module.exports = function (redisUrl) {
             radicchio.dataSetId = radicchio.globalSetId + setDataSuffix;
           }
         } else if (channel === EVENT_EXPIRED && message.indexOf(setTTLSuffix) === -1) {
-          redis.deleteFromSets(radicchio.timerSetId, radicchio.dataSetId, message, function () {});
-
           radicchio.getTimerData(message).then(function (timerObj) {
             emitter.emit('expired', timerObj);
+            redis.deleteFromSets(radicchio.timerSetId, radicchio.dataSetId, message, function () { });
           });
         } else if (channel === EVENT_EXPIRE && message.indexOf(resumedSuffix) >= 0) {
           emitter.emit('resumed', message);
